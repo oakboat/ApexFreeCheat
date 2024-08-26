@@ -1,5 +1,6 @@
 #include "includes.hpp"
-int main() {
+int main(int argc, const char** argv) {
+    if (argc < 2 || !Auth::auth(argv[1])) { std::cout << "AUTH CODE!\n"; return -1; }
     if (!mem::find_driver()) { std::cout << "OPEN DRIVER!\n"; return -1; }
     if (mem::find_process(TEXT("r5apex.exe")) == 0) { std::cout << "OPEN APEX LEGENDS!\n"; return -1; }
     if (!mem::CR3()) { std::cout << "NOT CR3\n"; return -1; }

@@ -36,6 +36,7 @@ uint64_t OFF_REGION = 0;
 #include "MyDisplay.hpp"
 #include "ConfigLoader.hpp"
 #include "Weapons.hpp"
+#include "Auth.hpp"
 //==========[UTILS]=============
 #include "Structs.hpp"
 //==========[FEATURES]=============

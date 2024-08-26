@@ -193,6 +193,7 @@
   <ItemGroup>
     <ClInclude Include="..\fud-eac-driver\comms.h" />
     <ClInclude Include="Aim.hpp" />
+    <ClInclude Include="Auth.hpp" />
     <ClInclude Include="ConfigLoader.hpp" />
     <ClInclude Include="includes.hpp" />
     <ClInclude Include="LocalPlayer.hpp" />

@@ -71,6 +71,9 @@
     <ClInclude Include="MyDisplay.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Auth.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Directory.build.props" />
