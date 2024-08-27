@@ -41,7 +41,7 @@ public:
     }
 
     bool keyDown(std::string keyName) {
-        int vkCode = keyNameToVKCode(keyName);
+        int vkCode = trimXKPrefix(keyName)[0];
         if (vkCode != 0) {
             return keyDown(vkCode);
         }
