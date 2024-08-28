@@ -200,6 +200,7 @@
     <ClInclude Include="ConfigLoader.hpp" />
     <ClInclude Include="includes.hpp" />
     <ClInclude Include="LocalPlayer.hpp" />
+    <ClInclude Include="Memory.h" />
     <ClInclude Include="MyDisplay.hpp" />
     <ClInclude Include="NoRecoil.hpp" />
     <ClInclude Include="Offsets.hpp" />

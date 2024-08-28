@@ -26,9 +26,8 @@
 #include <windows.h>
 #include <TlHelp32.h>
 //==========[CORE]=============
-uint64_t OFF_REGION = 0;
 #include "Vectors.hpp"
-#include "../fud-eac-driver/comms.h"
+#include "Memory.h"
 #include "Offsets.hpp"
 #include "QAngle.hpp"
 #include "Resolver.hpp"

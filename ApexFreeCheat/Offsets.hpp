@@ -1,11 +1,11 @@
-// Game Version: v.3.0.78.32
+// Game Version: v 3.0.79.44
 #pragma once
-//constexpr uint64_t OFF_REGION = 0x140000000;    //[Static]->Region
+uint64_t OFF_REGION = 0;    //[Static]->Region
 constexpr uint64_t OFF_LEVEL = 0x17ec544;       //[Miscellaneous]->LevelName
 constexpr uint64_t OFF_LOCAL_PLAYER = 0x23e91f8;//[Miscellaneous]->LocalPlayer
 constexpr uint64_t OFF_ENTITY_LIST = 0x1f15f88; //[Miscellaneous]->cl_entitylist
 constexpr uint64_t OFF_GLOBAL_VARS = 0x17ec040; //[Miscellaneous]->GlobalVars
-constexpr uint64_t OFF_NAMELIST = 0xd350450;    //[Miscellaneous]->NameList
+constexpr uint64_t OFF_NAMELIST = 0xd388450;    //[Miscellaneous]->NameList
 
 // Buttons
 constexpr uint64_t OFF_IN_ATTACK = 0x0769b658;  //[Buttons]->in_attack
@@ -34,13 +34,13 @@ constexpr uint64_t OFF_NAME = 0x0481;            //[RecvTable.DT_BaseEntity]->m_
 constexpr uint64_t OFF_SIGNIFIER_NAME = 0x0478;  //[RecvTable.DT_BaseEntity]->m_iSignifierName
 constexpr uint64_t OFF_LIFE_STATE = 0x0690;      //[RecvTable.DT_Player]->m_lifeState
 constexpr uint64_t OFF_BLEEDOUT_STATE = 0x2760;  //[RecvTable.DT_Player]->m_bleedoutState
-constexpr uint64_t OFF_LAST_VISIBLE_TIME = 0x199e + 0x2 ; //[RecvTable.DT_BaseCombatCharacter]->CPlayer!lastVisibleTime // m_hudInfo_visibilityTestAlwaysPasses + 0x2
+constexpr uint64_t OFF_LAST_VISIBLE_TIME = 0x199e + 0x2; //[RecvTable.DT_BaseCombatCharacter]->CPlayer!lastVisibleTime // m_hudInfo_visibilityTestAlwaysPasses + 0x2
 constexpr uint64_t OFF_LAST_AIMEDAT_TIME = OFF_LAST_VISIBLE_TIME + 0x8; //[RecvTable.DT_BaseCombatCharacter]->OFF_LAST_VISIBLE_TIME + 0x8 // m_hudInfo_visibilityTestAlwaysPasses + 0x2 + 0x8
 constexpr uint64_t OFF_VIEW_ANGLES = 0x2534 - 0x14; //[DataMap.C_Player]->m_ammoPoolCapacity - 0x14
 constexpr uint64_t OFF_PUNCH_ANGLES = 0x2438;    //[DataMap.C_Player]->m_currentFrameLocalPlayer.m_vecPunchWeapon_Angle
 constexpr uint64_t OFF_BREATH_ANGLES = OFF_VIEW_ANGLES - 0x10; //(OFF_VIEW_ANGLES - 0x10)
 constexpr uint64_t OFF_STUDIOHDR = 0x1000;       //[Miscellaneous]->CBaseAnimating!m_pStudioHdr
-constexpr uint64_t OFF_BONES =  0x0db0 + 0x48;   //[RecvTable.DT_BaseAnimating]->m_nForceBone + 0x48
+constexpr uint64_t OFF_BONES = 0x0db0 + 0x48;   //[RecvTable.DT_BaseAnimating]->m_nForceBone + 0x48
 constexpr uint64_t OFF_CAMERAORIGIN = 0x1ee0;    //[Miscellaneous]->CPlayer!camera_origin
 constexpr uint64_t OFF_MODELNAME = 0x0030;       //[DataMap.C_BaseEntity]->m_ModelName
 constexpr uint64_t OFF_YAW = 0x223c - 0x8;;      //[DataMap.C_Player]=>m_currentFramePlayer.m_ammoPoolCount - 0x8
@@ -49,7 +49,7 @@ constexpr uint64_t OFF_XPLEVEL = 0x3724;         //m_xp
 constexpr uint64_t OFF_SQUAD_ID = 0x0344;        //m_squadID
 constexpr uint64_t OFF_GAMEMODE = 0x02421250;    //mp_gamemode
 constexpr uint64_t OFF_SPECTATOR_LIST = 0x1f17fa8; //IDA signtature -> [48 8B 0D ? ? ? ? 48 85 C9 74 ? 48 8B 01 FF ? ? 48 85 C0 74 ? 48 63 4E 38]
-constexpr uint64_t OFF_SPECTATOR_LIST_ARRAY = 0x974; 
+constexpr uint64_t OFF_SPECTATOR_LIST_ARRAY = 0x974;
 
 // Weapon
 constexpr uint64_t OFF_WEAPON_HANDLE = 0x1944;   //[RecvTable.DT_BaseCombatCharacter]->m_latestPrimaryWeapons

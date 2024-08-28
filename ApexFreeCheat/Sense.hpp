@@ -53,14 +53,14 @@ struct Sense {
         if (cl->FEATURE_ITEM_GLOW_ON){
             for (int highlightId = 15; highlightId < 66; highlightId++) {
             const GlowMode newGlowMode = { 137,0,0,127 };
-            const GlowMode oldGlowMode = read<GlowMode>(lp->highlightSettingsPtr + (HIGHLIGHT_TYPE_SIZE * highlightId) + 0, "Player oldGlowMode");
+            const GlowMode oldGlowMode = mem::read<GlowMode>(lp->highlightSettingsPtr + (HIGHLIGHT_TYPE_SIZE * highlightId) + 0, "Player oldGlowMode");
             if (newGlowMode != oldGlowMode)
-                write<GlowMode>(lp->highlightSettingsPtr + (HIGHLIGHT_TYPE_SIZE * highlightId) + 0, newGlowMode);
+                mem::write<GlowMode>(lp->highlightSettingsPtr + (HIGHLIGHT_TYPE_SIZE * highlightId) + 0, newGlowMode);
             }    
         } else if (!cl->FEATURE_ITEM_GLOW_ON){
             for (int highlightId = 15; highlightId < 66; highlightId++) {
             const GlowMode newGlowMode = { 135,135,32,64 };
-            write<GlowMode>(lp->highlightSettingsPtr + (HIGHLIGHT_TYPE_SIZE * highlightId) + 0, newGlowMode);
+            mem::write<GlowMode>(lp->highlightSettingsPtr + (HIGHLIGHT_TYPE_SIZE * highlightId) + 0, newGlowMode);
             }
         }   
     }

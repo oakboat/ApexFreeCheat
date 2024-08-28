@@ -33,18 +33,18 @@ struct Random{
             case 0:
                 if (traversalProgress > 0.88f && hangOnWall > 0.0f && hangOnWall < 1.5f && traversalReleaseTime == 0.0f)
                 {
-                    write<int>(OFF_REGION + OFF_IN_JUMP + 0x8, 5);
+                    mem::write<int>(OFF_REGION + OFF_IN_JUMP + 0x8, 5);
                     sgState = 1;
                     sgFrameTime = lp->frameCount;
                 }
                 else if (hangOnWall > 0.1f && hangOnWall < 0.12f && traversalProgress < 0.85f) {
-                    write<int>(OFF_REGION + OFF_IN_JUMP + 0x8, 4);
+                    mem::write<int>(OFF_REGION + OFF_IN_JUMP + 0x8, 4);
                 }
                 break;
             case 1:
                 if(sgFrameTime + 1 <= lp->frameCount)
                 {
-                    write<int>(OFF_REGION + OFF_IN_DUCK + 0x8, 5);
+                    mem::write<int>(OFF_REGION + OFF_IN_DUCK + 0x8, 5);
                     sgState = 2;
                     sgFrameTime = lp->frameCount;
                 }
@@ -52,8 +52,8 @@ struct Random{
             case 2:
                 if (time - traversalReleaseTime > 0.1f && sgFrameTime + 1 <= lp->frameCount)
                 {
-                    write<int>(OFF_REGION + OFF_IN_JUMP + 0x8, 4);
-                    write<int>(OFF_REGION + OFF_IN_DUCK + 0x8, 4);
+                    mem::write<int>(OFF_REGION + OFF_IN_JUMP + 0x8, 4);
+                    mem::write<int>(OFF_REGION + OFF_IN_DUCK + 0x8, 4);
                     sgState = 0;
                 }
                 break;
@@ -77,17 +77,17 @@ struct Random{
     }   
     void mapRadar(){
         if (display->keyDown(cl->FEATURE_MAP_RADAR_BUTTON) && cl->FEATURE_MAP_RADAR_ON) {
-            uint64_t pLocal = read<uint64_t>(OFF_REGION + OFF_LOCAL_PLAYER, "LocalPlayer");
+            uint64_t pLocal = mem::read<uint64_t>(OFF_REGION + OFF_LOCAL_PLAYER, "LocalPlayer");
 
-            int currentTEAM = read<int>(pLocal + OFF_TEAM_NUMBER, "Curren TeamID");
+            int currentTEAM = mem::read<int>(pLocal + OFF_TEAM_NUMBER, "Curren TeamID");
             
             for (uintptr_t i = 0; i <= 80000; i++)
             {
-            write<int>(pLocal + OFF_TEAM_NUMBER, 1);
+            mem::write<int>(pLocal + OFF_TEAM_NUMBER, 1);
             }
             for (uintptr_t i = 0; i <= 80000; i++)
             {
-            write<int>(pLocal + OFF_TEAM_NUMBER, currentTEAM);
+            mem::write<int>(pLocal + OFF_TEAM_NUMBER, currentTEAM);
             } 
         }
     }
@@ -202,8 +202,8 @@ struct Random{
             if (weaponSkinMap.count(waponIndex) == 0) return;
             int skinID = weaponSkinMap[waponIndex][0];
             //printf("Weapon: %s Activated Skin ID: %d \n", WeaponName(waponIndex).c_str(), skinID);  
-            write<int>(lp->base + OFF_SKIN, skinID+1);
-            write<int>(lp->weaponEntity + OFF_SKIN, skinID);
+            mem::write<int>(lp->base + OFF_SKIN, skinID+1);
+            mem::write<int>(lp->weaponEntity + OFF_SKIN, skinID);
         }                    
     }
      

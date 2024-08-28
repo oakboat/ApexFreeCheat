@@ -25,14 +25,14 @@ struct Level{
 
 	void readFromMemory() {
         if (mem::process_id != 0) {
-            name = ReadString(OFF_REGION + OFF_LEVEL, 1024, "Level name");
+            name = mem::readString(OFF_REGION + OFF_LEVEL, 1024, "Level name");
             playable = !name.empty() && name != "mp_lobby";
             trainingArea = name == "mp_rr_canyonlands_staging_mu1";
 
             if (playable || trainingArea) {
-                uint64_t gameModePtr = read<uint64_t>(OFF_REGION + OFF_GAMEMODE + 0x50, "gameModePtr");
+                uint64_t gameModePtr = mem::read<uint64_t>(OFF_REGION + OFF_GAMEMODE + 0x50, "gameModePtr");
                 if (gameModePtr > 0) {
-                    read(gameModePtr, &gameMode, sizeof(gameMode));
+                    mem::read(gameModePtr, &gameMode, sizeof(gameMode));
                     mapMixtape = mixtape[gameMode];
                     Map::map_mixtape = mapMixtape;
                 }
