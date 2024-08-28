@@ -123,14 +123,6 @@ int wmain(const int argc, wchar_t** argv) {
 		Log(L"[+] Pass Allocation Ptr as first param enabled" << std::endl);
 	}
 
-	const std::wstring driver_path = L"drvrecode_eac.sys";
-
-	if (!std::filesystem::exists(driver_path)) {
-		Log(L"[-] File " << driver_path << L" doesn't exist" << std::endl);
-		PauseIfParentIsExplorer();
-		return -1;
-	}
-
 	iqvw64e_device_handle = intel_driver::Load();
 
 	if (iqvw64e_device_handle == INVALID_HANDLE_VALUE) {
@@ -155,7 +147,7 @@ int wmain(const int argc, wchar_t** argv) {
 
 	NTSTATUS exitCode = 0;
 	if (!kdmapper::MapDriver(iqvw64e_device_handle, drvrecode_eac, 0, 0, free, true, mode, passAllocationPtr, callbackExample, &exitCode)) {
-		Log(L"[-] Failed to map " << driver_path << std::endl);
+		Log(L"[-] Failed to map ApexFreeCheat driver" << std::endl);
 		intel_driver::Unload(iqvw64e_device_handle);
 		PauseIfParentIsExplorer();
 		return -1;
