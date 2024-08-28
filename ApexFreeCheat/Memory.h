@@ -126,7 +126,7 @@ namespace mem {
 		}
 		return true;
 	}
-	std::string readString(long address, int size, std::string whatAreYouReading) {
+	std::string readString(uint64_t address, DWORD size, std::string whatAreYouReading) {
 		char* buffer = new char[size];
 		read(address, buffer, size);
 		auto str = std::string(buffer);
