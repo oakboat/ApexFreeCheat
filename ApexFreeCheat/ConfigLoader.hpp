@@ -1,6 +1,6 @@
 #pragma once
 struct ConfigLoader {
-    const std::string FILE_NAME = "nika.ini";
+    const std::string FILE_NAME = "ApexFreeCheat.ini";
     std::vector<std::string>* lines = new std::vector<std::string>;
     long m_lastTimeFileEdited = 0;
 
@@ -223,54 +223,6 @@ struct ConfigLoader {
     }
 
     void printLogo(){
-        std::cout << "\033[1;33m";         
-        std::cout << " .--..--..--..--..--..--..--..--..--..--..--..--..--..--.\n";
-        std::this_thread::sleep_for(std::chrono::milliseconds(69));
-        std::cout << R"(/ .. \.. \.. \.. \.. \.. \.. \.. \.. \.. \.. \.. \.. \.. \)" << std::endl;
-        std::this_thread::sleep_for(std::chrono::milliseconds(69));
-        std::cout << R"(\ \/\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ \/ /)" << std::endl;
-        std::this_thread::sleep_for(std::chrono::milliseconds(69));
-        std::cout << R"( \/ /`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'\/ /)" << std::endl;
-        std::this_thread::sleep_for(std::chrono::milliseconds(69));
-        std::cout << R"( / /\                                                / /\)" << std::endl;
-        std::this_thread::sleep_for(std::chrono::milliseconds(69));
-        std::cout << R"(/ /\ \          ,--.             ,--.               / /\ \)" << std::endl;
-        std::this_thread::sleep_for(std::chrono::milliseconds(69));
-        std::cout << R"(\ \/ /        ,--.'|  ,---,  ,--/  /|  ,---,,       \ \/ /)" << std::endl;
-        std::this_thread::sleep_for(std::chrono::milliseconds(69));
-        std::cout << R"( \/ /     ,--,:  : ,`--.' ,---,': / ' '  .'  :       \/ /)" << std::endl;
-        std::this_thread::sleep_for(std::chrono::milliseconds(69));
-        std::cout << R"( / /\  ,`--.'`|  ' |   :  :   : '/ / /  ;     \      / /\)" << std::endl;
-        std::this_thread::sleep_for(std::chrono::milliseconds(69));
-        std::cout << R"(/ /\ \ |   :  :  | :   |  |   '   , :  :       :    / /\ \)" << std::endl;
-        std::this_thread::sleep_for(std::chrono::milliseconds(69));
-        std::cout << R"(\ \/ / :   |   \ | |   :  '   |  /  :  |   /\   \   \ \/ /)" << std::endl;
-        std::this_thread::sleep_for(std::chrono::milliseconds(69));
-        std::cout << R"( \/ /  |   : '  '; '   '  |   ;  ;  |  :  ' ;.   :   \/ /)" << std::endl;
-        std::this_thread::sleep_for(std::chrono::milliseconds(69));
-        std::cout << R"( / /\  '   ' ;.    |   |  :   '   \ |  |  ;/  \   \  / /\)" << std::endl;
-        std::this_thread::sleep_for(std::chrono::milliseconds(69));
-        std::cout << R"(/ /\ \ |   | | \   '   :  |   |    ''  :  | \  \ ,' / /\ \)" << std::endl;
-        std::this_thread::sleep_for(std::chrono::milliseconds(69));
-        std::cout << R"(\ \/ / '   : |  ; .|   |  '   : |.  |  |  '  '--'   \ \/ /)" << std::endl;
-        std::this_thread::sleep_for(std::chrono::milliseconds(69));
-        std::cout << R"( \/ /  |   | '`--' '   :  |   | '_\.|  :  :          \/ /)" << std::endl;
-        std::this_thread::sleep_for(std::chrono::milliseconds(69));
-        std::cout << R"( / /\  '   : |     ;   |.''   : |   |  | ,'          / /\)" << std::endl;
-        std::this_thread::sleep_for(std::chrono::milliseconds(69));
-        std::cout << R"(/ /\ \ ;   |.'     '---'  ;   |,'   `--''           / /\ \)" << std::endl;
-        std::this_thread::sleep_for(std::chrono::milliseconds(69));
-        std::cout << R"(\ \/ / '---'              '---'                     \ \/ /)" << std::endl;
-        std::this_thread::sleep_for(std::chrono::milliseconds(69));
-        std::cout << R"( \/ /                                                \/ /)" << std::endl;
-        std::this_thread::sleep_for(std::chrono::milliseconds(69));
-        std::cout << R"( / /\.--..--..--..--..--..--..--..--..--..--..--..--./ /\)" << std::endl;
-        std::this_thread::sleep_for(std::chrono::milliseconds(69));
-        std::cout << R"(/ /\ \.. \.. \.. \.. \.. \.. \.. \.. \.. \.. \.. \.. \/\ \)" << std::endl;
-        std::this_thread::sleep_for(std::chrono::milliseconds(69));
-        std::cout << R"(\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `' /)" << std::endl;
-        std::this_thread::sleep_for(std::chrono::milliseconds(69));
-        std::cout << R"( `--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--')" << std::endl;
-        std::cout << "\033[0m"; 
+        std::cout << "ÂÌÍæ\n";         
     }
 };

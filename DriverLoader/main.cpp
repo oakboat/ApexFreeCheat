@@ -99,6 +99,16 @@ void PauseIfParentIsExplorer() {
 	}
 }
 
+bool find_driver() {
+	auto driver_handle = CreateFileW(L"\\\\.\\\staydetected", GENERIC_READ | GENERIC_WRITE, FILE_SHARE_READ | FILE_SHARE_WRITE, NULL, OPEN_EXISTING, 0, NULL);
+
+	if (!driver_handle || (driver_handle == INVALID_HANDLE_VALUE))
+		return false;
+
+	CloseHandle(driver_handle);
+	return true;
+}
+
 int wmain(const int argc, wchar_t** argv) {
 	SetUnhandledExceptionFilter(SimplestCrashHandler);
 
@@ -121,6 +131,12 @@ int wmain(const int argc, wchar_t** argv) {
 
 	if (passAllocationPtr) {
 		Log(L"[+] Pass Allocation Ptr as first param enabled" << std::endl);
+	}
+
+	if (find_driver())
+	{
+		Log(L"[-] Driver loaded" << std::endl);
+		return 0;
 	}
 
 	iqvw64e_device_handle = intel_driver::Load();
