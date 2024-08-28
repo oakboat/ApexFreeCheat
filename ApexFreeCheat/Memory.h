@@ -76,7 +76,7 @@ namespace mem {
 		return image_address;
 	}
 	bool CR3() {
-		bool ret = false;
+		ULONGLONG ret = false;
 		_dtb arguments = { 0 };
 		arguments.process_id = process_id;
 		arguments.operation = (bool*)&ret;
