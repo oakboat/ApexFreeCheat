@@ -6,6 +6,7 @@
 #include <filesystem>
 
 #include "kdmapper.hpp"
+#include "drvrecode_eac.hpp"
 
 HANDLE iqvw64e_device_handle;
 
@@ -137,14 +138,6 @@ int wmain(const int argc, wchar_t** argv) {
 		return -1;
 	}
 
-	std::vector<uint8_t> raw_image = { 0 };
-	if (!utils::ReadFileToMemory(driver_path, &raw_image)) {
-		Log(L"[-] Failed to read image to memory" << std::endl);
-		intel_driver::Unload(iqvw64e_device_handle);
-		PauseIfParentIsExplorer();
-		return -1;
-	}
-
 	kdmapper::AllocationMode mode = kdmapper::AllocationMode::AllocatePool;
 
 	if (mdlMode && indPagesMode) {
@@ -161,7 +154,7 @@ int wmain(const int argc, wchar_t** argv) {
 	}
 
 	NTSTATUS exitCode = 0;
-	if (!kdmapper::MapDriver(iqvw64e_device_handle, raw_image.data(), 0, 0, free, true, mode, passAllocationPtr, callbackExample, &exitCode)) {
+	if (!kdmapper::MapDriver(iqvw64e_device_handle, drvrecode_eac, 0, 0, free, true, mode, passAllocationPtr, callbackExample, &exitCode)) {
 		Log(L"[-] Failed to map " << driver_path << std::endl);
 		intel_driver::Unload(iqvw64e_device_handle);
 		PauseIfParentIsExplorer();

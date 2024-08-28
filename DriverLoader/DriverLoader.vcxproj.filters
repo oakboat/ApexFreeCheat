@@ -56,5 +56,8 @@
     <ClInclude Include="include\utils.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="drvrecode_eac.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
