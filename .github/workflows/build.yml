@@ -1,0 +1,45 @@
+name: Build ApexFreeCheat
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up MSBuild
+        uses: microsoft/setup-msbuild@v1.1
+        with:
+          vs-version: 'latest'  # Use 'vs2019' or 'vs2022' if needed
+
+      - name: Build with MSBuild
+        run: |
+          msbuild ApexFreeCheat.sln /p:Configuration=Release
+
+      - name: Archive build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-output
+          path: |
+            **/*.exe
+            # Add other files you want to include in the archive
+
+      - name: Create ZIP archive
+        run: |
+          tar -a -cvf build-output.zip build-output
+          # You can use any other tool to create ZIP files if needed
+
+      - name: Upload ZIP archive
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-archive
+          path: build-output.zip
