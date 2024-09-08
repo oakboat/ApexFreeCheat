@@ -191,7 +191,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Nika.cpp" />
+    <ClCompile Include="ApexFreeCheat.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\fud-eac-driver\comms.h" />

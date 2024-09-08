@@ -223,6 +223,6 @@ struct ConfigLoader {
     }
 
     void printLogo(){
-        std::cout << "ÂÌÍæ\n";         
+        std::cout << "ApexFreeCheat\n";         
     }
 };

@@ -2,6 +2,7 @@
 #pragma comment(lib, "Winmm.lib")
 
 int main(int argc, const char** argv) {
+    setvbuf(stdout, NULL, _IONBF, 0);
     if (argc < 2 || !Auth::auth(argv[1])) { std::cout << "AUTH CODE!\n"; return -1; }
     if (!mem::find_driver()) { std::cout << "OPEN DRIVER!\n"; return -1; }
     if (mem::find_process(TEXT("r5apex.exe")) == 0) { std::cout << "OPEN APEX LEGENDS!\n"; return -1; }
