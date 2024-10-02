@@ -32,14 +32,3 @@ jobs:
           path: |
             **/*.exe
             # Add other files you want to include in the archive
-
-      - name: Create ZIP archive
-        run: |
-          tar -a -cvf build-output.zip build-output
-          # You can use any other tool to create ZIP files if needed
-
-      - name: Upload ZIP archive
-        uses: actions/upload-artifact@v3
-        with:
-          name: build-archive
-          path: build-output.zip
